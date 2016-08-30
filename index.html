@@ -63,10 +63,10 @@
 	<section>
           <h2>When To Use Components</h2>
           <p class="fragment">Provide Isolation</p>
-          <p class="fragment">Single Responsibility Principle</p>
           <p class="fragment">Reuse</p>
           <p class="fragment">Simplify Markup</p>
           <p class="fragment">Testable</p>
+          <p class="fragment">Single Responsibility Principle</p>
         </section>
         <section>
           <h2>Think through reuse</h2>
@@ -79,11 +79,16 @@
         <section>
           <h2>Data Flows Down Via Attribute Binding</h2>
           <img src="images/data-down.png" height="400px">
+          <aside class="note">
+            You can set the controller's model in a customized way using RSVP.Hash and the route's setupController hook.
+          </aside>
         </section>
         <section>
           <h2>Binding Tips</h2>
           <p class="fragment">keep data up high</p>
           <p class="fragment">Ember is optimized for fast rendering when data changes</p>
+          <p class="fragment">Use computed properties to massage data for display</p>
+          <p class="fragment">Use lifecycle rules to take actions based on bound attribute updates</p>
         </section>
         <section>
           <h2>Actions are invoked Upward Via Closure Actions</h2>
@@ -163,14 +168,6 @@ this.get('sendMessage')("hello!");
           </ul>
         </section>
         <section>
-          <h2>Coordinating Components</h2>
-          <ul>
-            <li>Top level component for a complex widget</li>
-            <li>May keep state or interact with a service</li>
-            <li>Example: Chat Pane</li>
-          </ul>
-        </section>
-        <section>
           <h2>Yields</h2>
           <p>a component can yield data through its template.</p>
           <pre>
@@ -191,6 +188,14 @@ this.get('sendMessage')("hello!");
 {{/blog-post}}
             </code>
           </pre>
+        </section>
+        <section>
+          <h2>Coordinating Components</h2>
+          <ul>
+            <li>Top level component for a complex widget</li>
+            <li>May keep state or interact with a service</li>
+            <li>Example: Chat Pane</li>
+          </ul>
         </section>
         <section>
           <h2>Reacting to Change</h2>
